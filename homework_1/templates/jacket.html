@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<p class="breadcrumbs">
+    {% for page in breadcrumbs[1:-1].split('/')[:-1] %}
+    /<a href="/{{ page }}/">{{ page }}</a>
+    {% endfor %}
+</p><br>
+<div class="goods">
+    <h3>Это куртка № {{ jacket.id }}</h3>
+    <br>Размер: {{ jacket.size_ru }}
+    <br>Цвет: {{ jacket.color }}
+    <br>Сезон: {{ jacket.season }}
+
+</div>
+{% endblock %}

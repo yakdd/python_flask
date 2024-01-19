@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/style.css">
+    <title>
+        {% block title %}
+        HW_1 {{ title }}
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container container-header">
+                <nav class="nav">
+                    <a href="/./"><span class="logo">WEAR-SHOP</span></a>
+                    <ul class="menu-items">
+                        <li><a href="/catalog/" class="menu-item">каталог</a></li>
+                        <li><a href="/basket/" class="menu-item">корзина</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="main">
+            <div class="container container-main">
+                {% block content %}
+                <h1>Интернет-магазин одежды</h1>
+                <img src="{{ img }}" alt="image">
+                {% endblock %}
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="container container-footer">
+                <div class="footer-menu">
+                    <ul class="footer-memu-items">
+                        <li><a href="/delivery/" class="footer-menu-item">доставка</a></li>
+                        <li><a href="/payment/" class="footer-menu-item">оплата</a></li>
+                        <li><a href="/contacts/" class="footer-menu-item">контакты</a></li>
+                    </ul>
+                </div>
+                <span class="copyright">Copyright 2024 &copy;</span>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

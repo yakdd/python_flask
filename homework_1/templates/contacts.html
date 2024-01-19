@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<p class="breadcrumbs">{% for page in breadcrumbs[1:-1].split('/') %}
+    /<a href="/{{ page }}/">{{ page }}</a>
+    {% endfor %}
+</p><br>
+<h3>Наши контакты:</h3>
+<div class="contacts">
+    <ul>
+        <li>Телефон: {{ contact.phone }}</li>
+        <li>Адрес: {{ contact.address }}</li>
+        <li>E-mail: {{ contact.email }}</li>
+    </ul>
+    <div class="send-mail">
+        <form action="#" class="send-mail__form">
+            <textarea rows="10" cols="50">Ваше сообщение:</textarea>
+            <button type="submit">отправить</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
