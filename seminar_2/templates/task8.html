@@ -1,0 +1,13 @@
+{% extends 'my_base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<h3>{{ message }}</h3>
+<form action="{{ url_for('name_flash') }}" method="post">
+    <input type="text" name="name" placeholder="Имя"><br>
+    <input type="submit" value="Send">
+</form>
+{% endblock %}

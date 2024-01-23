@@ -1,0 +1,27 @@
+{% extends 'my_base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="/static/css/flash.css">
+{% endblock %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %} <!-- <h3>{{ message }}</h3> -->
+<form action="/name_flash/" method="post">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <!-- <div class="alert alert-{{ category }}"> -->
+    <div class="alert {{ category }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <input type="text" name="name" placeholder="Имя">
+    <input type="submit" value="Отправить">
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+.alert {
+    width: 300px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.danger {
+    font-weight: 700;
+    padding: 10px 40px;
+    background-color: rgb(255, 169, 143);
+}
+
+.success {
+    padding: 10px 40px;
+    background-color: rgb(105, 255, 150);
+}

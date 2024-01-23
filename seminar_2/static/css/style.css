@@ -1,0 +1,23 @@
+body {
+font-family: Verdana}
+
+h1 {
+color: #777;}
+
+.news {
+max-width: 350px;
+padding: 10px;
+margin-bottom: 30px;
+background-color: #eee;
+}
+
+h3 {
+color: #00f}
+
+span {
+font-size: 0.8em;
+color: #0f0;}
+
+table, td {
+padding: 3px;
+border: solid 1px #000}

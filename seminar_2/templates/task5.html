@@ -1,0 +1,18 @@
+{% extends 'my_base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<h3>{{ message }}</h3>
+<form action="{{ url_for('calculator') }}" method="post">
+    <input type="number" name="x" placeholder="X = "><br>
+    <input type="number" name="y" placeholder="Y = "><br>
+    <input type="radio" name="operator" value="+"> сложение<br>
+    <input type="radio" name="operator" value="-"> вычитание<br>
+    <input type="radio" name="operator" value="*"> умножение<br>
+    <input type="radio" name="operator" value="/"> деление<br>
+    <input type="submit" value="Calculate">
+</form>
+{% endblock %}

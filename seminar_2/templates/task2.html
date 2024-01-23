@@ -1,0 +1,10 @@
+{% extends 'my_base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<img src="{{ url_for('static', filename='images/foto.jpg') }}" width="150"><br>
+<a href="{{ url_for('download_img_post') }}">Загрузить изображение</a>
+{% endblock %}
