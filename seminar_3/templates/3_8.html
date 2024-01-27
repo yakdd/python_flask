@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} {{ title }}
+{% endblock %}
+
+{% block content %}
+<h3>{{ h3 }}</h3>
+<form method="post" , action="{{ url_for('index') }}">
+    {{ form.csrf_token }}
+    {% for input in form if input.name != 'csrf_token' %}
+    {{ input }}&nbsp;&nbsp;&nbsp;{{ input.label }}<br><br>
+    {% if input.errors %}
+    <ul>
+        {% for error in input.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endfor %}
+    <input type="submit" value="Отправить данные">
+</form>
+<p><a href="{{ url_for('show_db') }}">Показать пользователей</a></p>
+{% endblock %}

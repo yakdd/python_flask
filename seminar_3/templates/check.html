@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} {{ title }}
+{% endblock %}
+
+{% block content %}
+<h3>{{ h3 }}</h3>
+<table cellspacing="0" cellpadding="0">
+    <tr>
+        <td><b>Фамилия</b></td>
+        <td><b>Имя</b></td>
+        <td><b>E-mail</b></td>
+        <td><b>Пароль</b></td>
+    </tr>
+    {% for user in users%}
+    <tr>
+        <td>{{ user.lastname }}</td>
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.password }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
